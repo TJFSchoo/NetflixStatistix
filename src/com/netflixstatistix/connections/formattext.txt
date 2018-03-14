@@ -1,0 +1,22 @@
+
+System.out.print(String.format("| %7s | %-32s | %-24s |\n", " ", " ", " ").replace(" ", "-"));
+
+while (rs.next()) {
+
+    int ISBN = rs.getInt("AbonneeID");
+    String title = rs.getString("Naam");
+    String author = rs.getString("Straat");
+
+    /* PRINTING WITHOUT FORMAT */
+
+    //System.out.println(ISBN + " " + title + " " + author);
+
+    /* PRINTING WITH FORMAT */
+
+    // Met 'format' kun je de string die je print het juiste formaat geven, als je dat wilt.
+    // %d = decimal, %s = string, %-32s = string, links uitgelijnd, 32 characters breed.
+
+    System.out.format("| %7d | %-32s | %-24s | \n", ISBN, title, author);
+}
+
+System.out.println(String.format("| %7s | %-32s | %-24s |\n", " ", " ", " ").replace(" ", "-"));
